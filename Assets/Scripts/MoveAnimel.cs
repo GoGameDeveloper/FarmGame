@@ -8,12 +8,19 @@ public class MoveAnimel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = Random.Range(5, 10);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.back * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if(transform.position.z < -50) 
+        {
+            Destroy(gameObject);
+            Debug.Log("Game Over!");
+        }
+
+
     }
 }

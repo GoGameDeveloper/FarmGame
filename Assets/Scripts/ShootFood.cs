@@ -16,5 +16,9 @@ public class ShootFood : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if(transform.position.z > 50)
+        {
+            Destroy(gameObject);
+        }
     }
 }
